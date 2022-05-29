@@ -1,12 +1,12 @@
 [programs.localnet]
-mymoneydapp = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+mymoneydapp = "3ypkSbbEJjpVMDomEPyYLQoqJQS65PT17UKWgKPUdC7P"
 
 [registry]
 url = "https://anchor.projectserum.com"
 
 [provider]
 cluster = "localnet"
-wallet = "/home/yaami_dancho/.config/solana/id.json"
+wallet = "/home/jjtom/.config/solana/id.json"
 
 [scripts]
-test = "mocha -t 1000000 tests/"
+test = "npx mocha -t 1000000 test/"

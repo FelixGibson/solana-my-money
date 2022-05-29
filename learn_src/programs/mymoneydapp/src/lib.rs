@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::token::{self, Burn, MintTo, SetAuthority, Transfer};
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("3ypkSbbEJjpVMDomEPyYLQoqJQS65PT17UKWgKPUdC7P");
 
 #[program]
 pub mod mymoneydapp {
@@ -39,42 +39,57 @@ pub enum AuthorityType {
 #[derive(Accounts)]
 pub struct ProxyTransfer<'info> {
     #[account(signer)]
+    /// CHECK:
     pub authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub from:AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub to: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
 #[derive(Accounts)]
 pub struct ProxyMintTo<'info> {
     #[account(signer)]
+    /// CHECK:
     pub authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub mint: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub to: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
 #[derive(Accounts)]
 pub struct ProxyBurn<'info> {
     #[account(signer)]
+    /// CHECK:
     pub authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub mint: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub to: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
 #[derive(Accounts)]
 pub struct ProxySetAuthority<'info> {
     #[account(signer)]
+    /// CHECK:
     pub current_authority: AccountInfo<'info>,
     #[account(mut)]
+    /// CHECK:
     pub account_or_mint: AccountInfo<'info>,
+    /// CHECK:
     pub token_program: AccountInfo<'info>,
 }
 
